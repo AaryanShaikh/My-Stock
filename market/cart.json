@@ -1,0 +1,240 @@
+[
+    {
+        "id":1,
+        "name":"apple",
+        "price":40,
+        "img":"./assets/items/apple.png",
+        "type":"fruit"
+    },
+    {
+        "id":2,
+        "name":"mango",
+        "price":50,
+        "img":"./assets/items/mango.png",
+        "type":"fruit"
+    },
+    {
+        "id":3,
+        "name":"carrot",
+        "price":20,
+        "img":"./assets/items/carrot.png",
+        "type":"veg"
+    },
+    {
+        "id":4,
+        "name":"oreo",
+        "price":20,
+        "img":"./assets/items/oreo.png",
+        "type":"snack"
+    },
+	{
+		"id": 5,
+		"name": "banana",
+		"img": "./assets/items/banana.png",
+		"price": 30,
+		"type": "fruit"
+	},
+	{
+		"id": 6,
+		"name": "orange",
+		"img": "/assets/items/orange.png",
+		"price": 60,
+		"type": "fruit"
+	},
+	{
+		"id": 7,
+		"name": "mosambi",
+		"img": "/assets/items/mosambi.png",
+		"price": 80,
+		"type": "fruit"
+	},
+	{
+		"id": 8,
+		"name": "beetroot",
+		"img":"./assets/items/beetroot.png",
+		"price": 40,
+		"type": "veg"
+	},
+	{
+		"id": 9,
+		"name": "cake",
+		"img": "./assets/items/cake.png",
+		"price": 140,
+		"type": "snack"
+	},
+	{
+		"id": 10,
+		"name": "dark fantasy",
+		"img": "/assets/items/dark fantasy.png",
+		"price": 30,
+		"type": "snack"
+	},
+	{
+		"id": 11,
+		"name": "tomato",
+		"img": "./assets/items/tomato.png",
+		"price": 50,
+		"type": "veg"
+	},
+	{
+		"id": 12,
+		"name": "chiku",
+		"img": "./assets/items/chiku.png",
+		"price": 70,
+		"type": "fruit"
+	},
+	{
+		"id": 13,
+		"name": "avacado",
+		"img": "/assets/items/avocado.png",
+		"price": 90,
+		"type": "fruit"
+	},
+	{
+		"id": 14,
+		"name": "blackberries",
+		"img": "./assets/items/blackberry.png",
+		"price": 40,
+		"type": "fruit"
+	},
+	{
+		"id": 15,
+		"name": "amaranth leaves",
+		"img": "./assets/items/amaranth leaves.png",
+		"price": 10,
+		"type": "veg"
+	},
+	{
+		"id": 16,
+		"name": "arrowroot",
+		"img": "./assets/items/arrowroot.png",
+		"price": 50,
+		"type": "veg"
+	},
+	{
+		"id": 17,
+		"name": "lays",
+		"img": "./assets/items/lays.png",
+		"price": 20,
+		"type": "snack"
+	},
+	{
+		"id": 18,
+		"name": "kurkure",
+		"img": "./assets/items/kurkure.png",
+		"price": 20,
+		"type": "snack"
+	},
+	{
+		"id": 19,
+		"name": "cherries",
+		"img": "/assets/items/cherry.png",
+		"price": 30,
+		"type": "fruit"
+	},
+	{
+		"id": 20,
+		"name": "dates",
+		"img": "./assets/items/dates.png",
+		"price": 100,
+		"type": "fruit"
+	},
+	{
+		"id": 21,
+		"name": "brocooli",
+		"img": "/assets/items/broccoli.png",
+		"price": 75,
+		"type": "veg"
+	},
+	{
+		"id": 22,
+		"name": "grapes",
+		"img": "/assets/items/grapes.png",
+		"price": 30,
+		"type": "fruit"
+	},
+	{
+		"id": 23,
+		"name": "doritos",
+		"img": "./assets/items/doritos.png",
+		"price": 10,
+		"type": "snack"
+	},
+	{
+		"id": 24,
+		"name": "jackfruit",
+		"img": "./assets/items/jackfruit.png",
+		"price": 60,
+		"type": "fruit"
+	},
+	{
+		"id": 25,
+		"name": "cabage",
+		"img": "/assets/items/cabbage.png",
+		"price": 50,
+		"type": "veg"
+	},
+	{
+		"id": 26,
+		"name": "marie biscuit",
+		"img": "/assets/items/marie.png",
+		"price": 10,
+		"type": "snack"
+	},
+	{
+		"id": 27,
+		"name": "kiwi",
+		"img": "./assets/items/Kiwi.png",
+		"price": 90,
+		"type": "fruit"
+	},
+	{
+		"id": 28,
+		"name": "cauliflower",
+		"img": "./assets/items/cauliflower.png",
+		"price": 60,
+		"type": "veg"
+	},
+	{
+		"id": 29,
+		"name": "banana chips",
+		"img": "/assets/items/banana chips.png",
+		"price": 55,
+		"type": "snack"
+	},
+	{
+		"id": 30,
+		"name": "lemon",
+		"img": "/assets/items/lemon.png",
+		"price": 20,
+		"type": "fruit"
+	},
+	{
+		"id": 31,
+		"name": "lychee",
+		"img": "./assets/items/lychee.png",
+		"price": 60,
+		"type": "fruit"
+	},
+	{
+		"id": 32,
+		"name": "celery",
+		"img": "./assets/items/celery.png",
+		"price": 45,
+		"type": "veg"
+	},
+	{
+		"id": 33,
+		"name": "olives",
+		"img": "./assets/items/olives.png",
+		"price": 120,
+		"type": "fruit"
+	},
+	{
+		"id": 34,
+		"name": "papaya",
+		"img": "/assets/items/papaya.png",
+		"price": 60,
+		"type": "fruit"
+	}
+]
