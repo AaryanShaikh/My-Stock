@@ -1,0 +1,46 @@
+[
+    {
+        "letters": ["S", "H", "U", "M", "L", "O", "G"],
+        "words": ["ghouls", "gums", "hogs", "hugs", "gosh", "gum", "hog", "sum", "log", "mug"]
+      },
+      {
+        "letters": ["T", "H", "S", "A", "O", "M", "Z"],
+        "words": ["maths", "moths", "atoms", "oaths", "hams", "math", "moth", "hats", "oath", "shot"]
+      },
+      {
+        "letters": ["F", "L", "U", "E", "N", "B", "I"],
+        "words": ["file", "fine", "fuel", "life", "blue", "line", "elf", "fin", "flu", "bin"]
+      },
+      {
+        "letters": ["A", "I", "O", "T", "D", "C", "F"],
+        "words": ["fact", "acid", "fiat", "ciao", "coat", "taco", "toad", "fat", "fit", "cat"]
+      },
+      {
+        "letters": ["P", "G", "I", "E", "U", "Q", "N"],
+        "words": ["equip", "ping", "pine", "pig", "peg", "pen", "pie", "pin", "pun", "gen"]
+      },
+    {
+        "letters": ["E", "R", "S", "T", "A", "N", "D"],
+        "words": ["Stand", "Earn", "Send", "Trend", "Sand", "Stern", "Tread", "Rend", "Dent", "Rest", "Near", "Ants", "Tears", "Trade", "Earns"]
+      },
+      {
+        "letters": ["P", "L", "A", "Y", "E", "R", "S"],
+        "words": ["Players", "Layer", "Pear", "Years", "Relay", "Slayer", "Replay", "Parley", "Seal", "Real", "Lay", "Spear", "Rely", "Spy", "Aye"]
+      },
+      {
+        "letters": ["G", "A", "M", "E", "O", "V", "R"],
+        "words": ["Game", "Over", "Rave", "Rome", "Mega", "Aver", "Grove", "Ogre", "Gear", "Rage", "Rove", "Gameover", "Move", "More", "Roam"]
+      },
+    {
+        "letters": ["B", "L", "U", "E", "S", "K", "Y"],
+        "words": ["Blue", "Sky", "Bus", "Lusk", "Sue", "Key", "Yule", "Use", "Sly", "Lube", "Lye", "Bye", "Yes", "Bulk", "Elk"]
+      },
+      {
+        "letters": ["F", "I", "R", "E", "S", "I", "D"],
+        "words": ["Fire", "Side", "Ride", "Fries", "Red", "Fires", "Rise", "Dries", "Dire", "Sire", "Sired", "Ire", "Rides", "Sir", "Defis"]
+      },
+      {
+        "letters": ["C", "O", "D", "E", "H", "A", "T"],
+        "words": ["Code", "Hate", "Coat", "Chat", "Date", "Ache", "Echo", "Dote", "Taco", "Head", "Doth", "The", "Coda", "Teach", "Cadet"]
+      }
+]
