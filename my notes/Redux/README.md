@@ -1,4 +1,75 @@
-# Fetch and Store data in Redux
+# Redux Setup (React + NextJs + Inertia-React + React-Native)
+## Recommended Extensions
+<ul>
+  <li>Material Icon Theme - <i>helps you understand folder structure easily using icons</i></li>
+  <li>ES7+ React/Redux/React-Native snippets - <i>helps in code faster</i></li>
+</ul>
+
+## NPM Packages
+<ul>
+  <li><b>redux</b> ( <i>The Bigg Boss</i> )</li>
+  <li><b>react-redux</b> ( <i>The react variant</i> )</li>
+  <li><b>redux-devtools-extension</b> ( <i>To view the store in browser</i> )</li>
+  <li><b>redux-persist</b> ( <i>Helps you persist and rehydrate your Redux state</i> )</li>
+  <li><b>redux-thunk</b> ( <i>Allows you to write asynchronous logic in your Redux actions</i> )</li>
+  <li>npm i redux react-redux redux-persist redux-thunk redux-devtools-extension</li>
+</ul>
+
+## Folder Structure
+<ul>
+  <li>Create a folder with name <b><i>store</i></b> in the main project.</li>
+  <li>Inside that folder create 2 sub-folders & 2 files with names </li>
+  <ul>
+    <li>Folders - <b><i>actions</i></b> & <b><i>reducers</i></b></li>
+    <li>Files - <b><i>store.js</i></b> & <b><i>selector.js</i></b> (<i>If you're using <b>Material Icon Theme</b> it'll automatically change icon to redux instead of javascript</i>)</li>
+  </ul>
+  <li>
+    Your folder structure should look like this <br/>
+    <img height="300" src="https://dummyimage.com/134x118/000/fff" />
+  </li>
+</ul>
+
+## Initial Setup
+<ul>
+  <li>Add a type inside <b>selector.js</b> file</li>  
+</ul>
+
+### selector.js
+```javascript
+export const USER_DATA = "USER_DATA";
+```
+
+<ul>
+<li>Go inside <b>reducer</b> folder & create an <b>index.js</b> file </li>
+</ul>
+
+### store.js
+```javascript
+import { createStore ,applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
+import rootReducer from './reducers';
+
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+
+const persistConfig = {
+    key: 'root',
+    storage,
+  }
+   
+const persistedReducer = persistReducer(persistConfig, rootReducer)
+
+const configureStore = () => {
+    const store = createStore(persistedReducer, composeWithDevTools(applyMiddleware(thunk)))
+    const persistor = persistStore(store)
+    return { store, persistor }
+}
+
+export default configureStore;
+```
+
+## Fetch and Store data in Redux
 <ul>
   <li>Create a folder by the name of the component (e.g. Taxi)</li>
   <li>Create these files
