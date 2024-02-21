@@ -8,7 +8,7 @@
 ## NPM Packages
 <ul>
   <li><b>redux</b> ( <i>The Bigg Boss</i> )</li>
-  <li><b>react-redux</b> ( <i>The react variant</i> )</li>
+  <li><b>react-redux</b> ( <i>To connect react to redux</i> )</li>
   <li><b>redux-devtools-extension</b> ( <i>To view the store in browser</i> )</li>
   <li><b>redux-persist</b> ( <i>Helps you persist and rehydrate your Redux state</i> )</li>
   <li><b>redux-thunk</b> ( <i>Allows you to write asynchronous logic in your Redux actions</i> )</li>
