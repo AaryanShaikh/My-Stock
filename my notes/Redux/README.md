@@ -135,6 +135,13 @@ const configureStore = () => {
 export default configureStore;
 ```
 
+<ul>
+  <li>
+    After actions & reducers created the structure should look like that <br/>
+     <img height="250" src="https://github.com/AaryanShaikh/My-Stock/blob/main/redux_after_setup.png" />
+  </li>
+</ul>
+
 ## Connecting components to store
 <ul>
   <li>Lets say that this is your normal component</li>
@@ -156,7 +163,7 @@ export default MyComponent
 ```
 
 <ul>
-  <li>Make the highlighted changes</li>
+  <li>Make the below changes</li>
 </ul>
 
 ```javascript
