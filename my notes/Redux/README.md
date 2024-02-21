@@ -25,7 +25,7 @@
   </ul>
   <li>
     Your folder structure should look like this <br/>
-    <img height="300" src="https://dummyimage.com/134x118/000/fff" />
+    <img height="150" src="https://github.com/AaryanShaikh/My-Stock/blob/main/redux_store_folder_structure.png" />
   </li>
 </ul>
 
@@ -40,7 +40,70 @@ export const USER_DATA = "USER_DATA";
 ```
 
 <ul>
-<li>Go inside <b>reducer</b> folder & create an <b>index.js</b> file </li>
+  <li>Go inside <b>reducer</b> folder & create a reducer file <b>user.js</b> </li>
+</ul>
+
+### user.js
+```javascript
+import { USER_DATA } from "../selector";
+
+const initialState = {
+    user_data: null,
+};
+
+export default function (state = initialState, action) {
+    const { type, payload } = action;
+
+    switch (type) {
+        case USER_DATA:
+            return {
+                ...state,
+                user_data: payload,
+            }
+
+        default:
+            return state;
+    }
+}
+```
+
+<ul>
+  <li>Go inside <b>actions</b> folder & create a action file <b>user.js</b> file </li>
+</ul>
+
+### user.js
+```javascript
+import { USER_DATA } from "../selector";
+
+export const setUserData = (data) => async (dispatch) => {
+    try {
+        // some logic code here
+        dispatch({
+            type: USER_DATA,
+            payload: data
+        });
+    } catch (err) {
+
+    }
+}
+```
+<ul>
+  <li>Go inside <b>reducer</b> folder & create an <b>index.js</b> file </li>
+</ul>
+
+### index.js (combining all the reducers)
+```javascript
+import { combineReducers } from 'redux';
+
+import user from './user';
+
+export default combineReducers({
+    user,
+});  
+```
+
+<ul>
+  <li>Configure the store in <b>store.js</b> file</li>  
 </ul>
 
 ### store.js
