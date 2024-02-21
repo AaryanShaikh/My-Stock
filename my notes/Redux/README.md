@@ -12,7 +12,8 @@
   <li><b>redux-devtools-extension</b> ( <i>To view the store in browser</i> )</li>
   <li><b>redux-persist</b> ( <i>Helps you persist and rehydrate your Redux state</i> )</li>
   <li><b>redux-thunk</b> ( <i>Allows you to write asynchronous logic in your Redux actions</i> )</li>
-  <li>npm i react-redux@7.2.6 redux@4.1.2 redux-devtools-extension@2.13.9 redux-persist@6.0.0 redux-thunk@2.4.1</li>
+  <li><b>prop-types</b> ( <i>Needed to connect Redux actions to components</i> )</li>
+  <li>npm i react-redux@7.2.6 redux@4.1.2 redux-devtools-extension@2.13.9 redux-persist@6.0.0 redux-thunk@2.4.1 prop-types</li>
 </ul>
 
 ## Folder Structure
@@ -40,10 +41,10 @@ export const USER_DATA = "USER_DATA";
 ```
 
 <ul>
-  <li>Go inside <b>reducer</b> folder & create a reducer file <b>user.js</b> </li>
+  <li>Go inside <b>reducer</b> folder & create a reducer file <b>user.reducer.js</b> </li>
 </ul>
 
-### user.js
+### user.reducer.js
 ```javascript
 import { USER_DATA } from "../selector";
 
@@ -68,10 +69,10 @@ export default function (state = initialState, action) {
 ```
 
 <ul>
-  <li>Go inside <b>actions</b> folder & create a action file <b>user.js</b> file </li>
+  <li>Go inside <b>actions</b> folder & create a action file <b>user.action.js</b> file </li>
 </ul>
 
-### user.js
+### user.action.js
 ```javascript
 import { USER_DATA } from "../selector";
 
@@ -95,7 +96,7 @@ export const setUserData = (data) => async (dispatch) => {
 ```javascript
 import { combineReducers } from 'redux';
 
-import user from './user';
+import user from './user.reducer';
 
 export default combineReducers({
     user,
@@ -115,7 +116,7 @@ import rootReducer from './reducers';
 // import AsyncStorage from '@react-native-async-storage/async-storage'; /* You'll need this if you're working on react-native */
 
 import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+import storage from 'redux-persist/lib/storage'; /* remove this in react-native as it will throw sync error, use AsyncStorage instead */ 
 
 const persistConfig = {
     key: 'root',
@@ -134,83 +135,52 @@ const configureStore = () => {
 export default configureStore;
 ```
 
-## Fetch and Store data in Redux
+## Connecting components to store
 <ul>
-  <li>Create a folder by the name of the component (e.g. Taxi)</li>
-  <li>Create these files
-    <ul>
-      <li>[name]ActionTypes.js (e.g. taxiActionTypes.js)
-        <ul>
-          <code>SET_GROUP_BOOKING_TAXI_DATA: 'SET_GROUP_BOOKING_TAXI_DATA'</code>
-        </ul>
-      </li>
-      <li>[name]Action.js (e.g. taxiAction.js)
-        <ul>
-          <pre>export const setGroupBookingTaxiData = data => ({
-              type: taxiActionTypes.SET_GROUP_BOOKING_TAXI_DATA,
-              payload: data
-           })</pre>
-        </ul>
-      </li>
-      <li>[name]Reducer.js (e.g. taxiReducer.js)
-        <ul>
-          <li>Initial State
-            <ul>
-              <code>groupBookingTaxiData: [] </code>
-            </ul>
-          </li>
-          <li>below in the reducer
-            <ul>
-              <pre>case taxiActionTypes.SET_GROUP_BOOKING_TAXI_DATA:
-  return {
-   ...state,
-   groupBookingTaxiData: action.payload
-}</pre>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>[name]Selector.js (e.g. taxiSelector.js)
-        <ul>
-          <pre>export const selectGroupBookingTaxiData = createSelector(
-    [selectTaxiAll],
-    (taxiData) => taxiData.groupBookingTaxiData
-)</pre>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>In Program
-    <ul>
-      <li>imports
-        <ul>
-          <pre>import { connect } from 'react-redux';
-import { setGroupBookingTaxiData } from '../../redux/taxi/taxiAction';
-import { createStructuredSelector } from 'reselect';
-import { selectGroupBookingTaxiData } from '../../redux/taxi/taxiSelector';</pre>
-        </ul>
-      </li>
-      <li>Access data from redux
-        <ul>
-          <li>the (groupBookingTaxiData) value should be passed to props (this is used to accessed the data)</li>
-          <pre>const mapStateToProps = createStructuredSelector({
-    groupBookingTaxiData: selectGroupBookingTaxiData
-})</pre>
-        </ul>
-      </li>
-      <li>Store data from redux
-        <ul>
-          <li>the (setGroupBookingTaxiData) value should be passed to props (this is used to set the data)</li>
-          <pre>const mapDispatchToProps = (dispatch) => ({
-    setGroupBookingTaxiData: (data) => dispatch(setGroupBookingTaxiData(data))
-})</pre>
-        </ul>
-      </li>
-      <li>changing default export
-        <ul>
-          <code>export default connect(mapStateToProps, mapDispatchToProps)(TaxiSearchContainer)</code>
-        </ul>
-      </li>
-    </ul>
-  </li>
+  <li>Lets say that this is your normal component</li>
 </ul>
+
+```javascript
+import { View, Text } from 'react-native'
+import React from 'react'
+
+const MyComponent = () => {
+  return (
+    <View>
+      <Text>MyComponent</Text>
+    </View>
+  )
+}
+
+export default MyComponent
+```
+
+<ul>
+  <li>Make the highlighted changes</li>
+</ul>
+
+```javascript
+import { View, Text } from 'react-native'
+import React from 'react'
+import PropTypes from "prop-types";
+import { connect } from 'react-redux'
+import { setUserData } from '../store/actions/user.action';
+
+const MyComponent = ({ setUserData, user_data }) => {
+    return (
+        <View>
+            <Text>MyComponent</Text>
+        </View>
+    )
+}
+
+const mapStateToProps = (state) => ({
+    user_data: state.user.user_data,
+})
+
+SelectProductScreen.propTypes = {
+    setUserData: PropTypes.func.isRequired,
+};
+
+export default connect(mapStateToProps, { setUserData })(MyComponent)
+```
