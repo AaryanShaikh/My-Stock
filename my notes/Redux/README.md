@@ -137,7 +137,7 @@ export default configureStore;
 
 <ul>
   <li>
-    After actions & reducers created the structure should look like that <br/>
+    After actions & reducers created the structure should look like this <br/>
      <img height="250" src="https://github.com/AaryanShaikh/My-Stock/blob/main/redux_after_setup.png" />
   </li>
 </ul>
