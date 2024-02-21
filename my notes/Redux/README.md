@@ -12,7 +12,7 @@
   <li><b>redux-devtools-extension</b> ( <i>To view the store in browser</i> )</li>
   <li><b>redux-persist</b> ( <i>Helps you persist and rehydrate your Redux state</i> )</li>
   <li><b>redux-thunk</b> ( <i>Allows you to write asynchronous logic in your Redux actions</i> )</li>
-  <li>npm i redux react-redux redux-persist redux-thunk redux-devtools-extension</li>
+  <li>npm i react-redux@7.2.6 redux@4.1.2 redux-devtools-extension@2.13.9 redux-persist@6.0.0 redux-thunk@2.4.1</li>
 </ul>
 
 ## Folder Structure
@@ -112,6 +112,7 @@ import { createStore ,applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
+// import AsyncStorage from '@react-native-async-storage/async-storage'; /* You'll need this if you're working on react-native */
 
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
@@ -119,6 +120,7 @@ import storage from 'redux-persist/lib/storage';
 const persistConfig = {
     key: 'root',
     storage,
+// storage:AsyncStorage, for react-native
   }
    
 const persistedReducer = persistReducer(persistConfig, rootReducer)
